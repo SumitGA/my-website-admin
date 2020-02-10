@@ -172,7 +172,9 @@ const SignIn = props => {
 
   const handleSignIn = event => {
     event.preventDefault();
-    history.push('/');
+    if(event.target.email.value === 'admin@gmail.com' && event.target.password.value === 'admin') {
+      history.push('/dashboard');
+    } 
   };
 
   const hasError = field =>
