@@ -14,8 +14,10 @@ import {
   Settings as SettingsView,
   SignUp as SignUpView,
   SignIn as SignInView,
-  NotFound as NotFoundView
+  NotFound as NotFoundView,
+  Education as EducationView
 } from './views';
+
 
 const Routes = () => {
   return (
@@ -84,6 +86,12 @@ const Routes = () => {
         exact
         layout={MinimalLayout}
         path="/not-found"
+      />
+      <RouteWithLayout
+        component={EducationView}
+        exact
+        layout={MainLayout}
+        path="/educations"
       />
       <Redirect to="/not-found" />
     </Switch>

@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/styles';
 import { Divider, Drawer } from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import PeopleIcon from '@material-ui/icons/People';
+import InputIcon from '@material-ui/icons/Input';
 
 import { Profile, SidebarNav } from './components';
 
@@ -46,6 +47,11 @@ const Sidebar = props => {
       title: 'Users',
       href: '/users',
       icon: <PeopleIcon />
+    },
+    {
+      title: 'Educations',
+      href: '/educations',
+      icon: <InputIcon />
     },
   ];
 
