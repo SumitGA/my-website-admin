@@ -117,7 +117,6 @@ const UsersTable = props => {
                   <TableCell>Name</TableCell>
                   <TableCell>Email</TableCell>
                   <TableCell>Location</TableCell>
-                  <TableCell>Phone</TableCell>
                   <TableCell>Registration date</TableCell>
                 </TableRow>
               </TableHead>
@@ -153,7 +152,6 @@ const UsersTable = props => {
                       {user.address.city}, {user.address.state},{' '}
                       {user.address.country}
                     </TableCell>
-                    <TableCell>{user.phone}</TableCell>
                     <TableCell>
                       {moment(user.createdAt).format('DD/MM/YYYY')}
                     </TableCell>
