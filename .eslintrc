@@ -62,6 +62,7 @@
     "jsx": true,
     "experimentalObjectRestSpread": true
   },
+  no-unused-expressions: [2, { allowTernary: true }],
   "plugins": [
     "react"
   ]

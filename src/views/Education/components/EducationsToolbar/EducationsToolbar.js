@@ -80,6 +80,10 @@ const NewEducation = props => {
   const [open, setOpen] = React.useState(false);
   const [instituteName, setInstituteName] = React.useState({});
   const [degreeName, setDegreeName] = React.useState({});
+  const [description, setDescription] = React.useState({});
+  const [address, setAddress] = React.useState({});
+  // const [startDate, setstartDate] = React.useState({});
+  // const [endDate, setendDate] = React.useState({});
 
   const handleOpen = () => {
     setOpen(true);
@@ -89,15 +93,12 @@ const NewEducation = props => {
     setOpen(false);
   }
 
-  const handleInstituteName = (e) => {
-    debugger
-    e.preventDefault;
-    setInstituteName(e.target.value);
-  }
-
-  const handleDegreeName = (e) => {
-    e.preventDefault;
-    setDegreeName(e.target.value);
+  const handleSubmit = (e) => {
+    console.log(instituteName);
+    console.log(degreeName);
+    console.log(description);
+    console.log(address);
+    setOpen(false);
   }
 
   const classes = useStyles();
@@ -127,32 +128,32 @@ const NewEducation = props => {
           <div className={classes.paper}>
             <h3 id="simple-modal-title" className={classes.modalTitle}>Add New User</h3>
             <Divider variant="middle" />
-            <form className={classes.formStyle} autoComplete="off">
+            <form className={classes.formStyle} autoComplete="off" onSubmit={ handleClose }>
               <div className={classes.modalContents}>
                 <TextField
                   id="outlined-name"
                   label="Institute Name"
-                  value={handleInstituteName()}
+                  onChange={ e => setInstituteName(e.target.value) }
                   variant="outlined"
                 />
                 <TextField
                   id="outlined-name"
                   label="Degree Name"
-                  value={handleDegreeName()}
+                  onChange={ e => setDegreeName(e.target.value) }
                   variant="outlined"
                 />
               </div>
               <div className={classes.modalContents}>
                 <TextField
                   id="outlined-name"
-                  label="password"
-                  value=""
+                  label="Description"
+                  onChange={ e => setDescription(e.target.value)}
                   variant="outlined"
                 />
                 <TextField
                   id="outlined-name"
-                  label="Confirm Password"
-                  value=""
+                  label="Address"
+                  onChange={ e => setAddress(e.target.value)}
                   variant="outlined"
                 />
               </div>
@@ -166,7 +167,7 @@ const NewEducation = props => {
               </Button>
               <Button
                 color="primary"
-                onClick={handleClose}
+                onClick={handleSubmit}
                 variant="contained"
               >
                 Create
